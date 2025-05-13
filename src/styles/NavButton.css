@@ -1,0 +1,21 @@
+.nav-button {
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+  .nav-button.active {
+    background-color: #f5f5f5;
+    color: black;
+  }
+  
+  .nav-button:not(.active):hover {
+    background-color: #f5f5f5;
+    color: black;
+  }
+  
