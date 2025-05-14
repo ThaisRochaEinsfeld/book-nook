@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       </div>
       <nav>
         <ul className="flex gap-4 items-center">
-          <li><NavButton label="Search" href="/" active/></li>
+          <li><NavButton label="Search" href="/search" active/></li>
           <li><NavButton label="Shelf" href="/shelf" /></li>
           <li><NavButton label="Profile" href="/profile" /></li>
         </ul>
