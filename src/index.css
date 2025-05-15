@@ -52,15 +52,11 @@ nav a:hover {
 .search-wrapper {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 8px;
   padding: 4px 8px;
   max-width: 300px;
-}
-
-.search-wrapper--embedded {
-  border-bottom: 1px solid #aaa;
-  border-radius: 12px 12px 0 0;
+  background-color: #ececec;
 }
 
 .search-icon {
@@ -73,6 +69,8 @@ nav a:hover {
   outline: none;
   flex: 1;
   font-size: 14px;
+  background-color: #ececec;
+  color: #bbb;
 }
 
 .search-page-header {
@@ -90,6 +88,7 @@ nav a:hover {
   color: black;
   font-weight: 500;
 }
+
 .book-list {
   display: flex;
   flex-direction: column;
