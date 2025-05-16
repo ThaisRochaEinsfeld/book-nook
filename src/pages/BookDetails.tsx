@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";  
+// import { useParams } from "react-router-dom";  
 import dunaImage from '../assets/duna.png';
 
 
@@ -71,25 +71,28 @@ const books = [
   ];
 
 const BookDetails: React.FC = () => {
-  const { id } = useParams<{ id: string }>();  
-  const book = books.find((b) => b.id === id); 
+  return(
+    <div>hi</div>
+  )
+  // // const { id } = useParams<{ id: string }>();  
+  // // const book = books.find((b) => b.id === id); 
 
-  if (!book) {
-    return <div>Livro não encontrado</div>;
-  }
+  // if (!book) {
+  //   return <div>Livro não encontrado</div>;
+  // }
 
-  return (
-    <div className="book-details">
-      <div className="book-details-image">
-        <img src={book.image} alt={book.title} width={300} height={300} />
-      </div>
-      <div className="book-details-info">
-        <h2>{book.title}</h2>
-        <p><strong>Autor:</strong> {book.author}</p>
-        <p><strong>Descrição:</strong> {book.description}</p>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="book-details">
+  //     <div className="book-details-image">
+  //       <img src={book.image} alt={book.title} width={300} height={300} />
+  //     </div>
+  //     <div className="book-details-info">
+  //       <h2>{book.title}</h2>
+  //       <p><strong>Autor:</strong> {book.author}</p>
+  //       <p><strong>Descrição:</strong> {book.description}</p>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default BookDetails;
