@@ -12,6 +12,10 @@ import escuridao from './assets/escuridao.png';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BookList from "./components/BookList";
 import BookDetail from "./pages/BookDetails"; 
+import Profile from './pages/Profile';
+import Shelf from './pages/Shelf';
+
+
 
 function App() {
   return (
@@ -19,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/search" element={<Search />} />
         <Route path="/book/:id" element={<BookDetail />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/shelf" element={<Shelf />} />
       </Routes>
     </BrowserRouter>
   );

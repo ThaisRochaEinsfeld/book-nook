@@ -70,8 +70,9 @@ nav a:hover {
   flex: 1;
   font-size: 14px;
   background-color: #ececec;
-  color: #bbb;
+  color: #000;
 }
+
 
 .search-page-header {
   display: flex;

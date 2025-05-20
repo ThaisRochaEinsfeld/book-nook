@@ -1,13 +1,15 @@
 import React from "react";
-import { useParams } from "react-router-dom";  
-import dunaImage from '../assets/duna.png';
-import neuromancer from '../assets/neuromancer.png';
-import fundacao from '../assets/fundacao.png';
-import robo from '../assets/robo.png';
-import admiravel from '../assets/admiravel.png';
-import infancia from '../assets/infancia.png';
-import solaris from '../assets/solaris.png';
-import escuridao from '../assets/escuridao.png';
+import { useParams, Link } from "react-router-dom";
+import Layout from "../components/Layout";
+import dunaImage from "../assets/duna.png";
+import neuromancer from "../assets/neuromancer.png";
+import fundacao from "../assets/fundacao.png";
+import robo from "../assets/robo.png";
+import admiravel from "../assets/admiravel.png";
+import infancia from "../assets/infancia.png";
+import solaris from "../assets/solaris.png";
+import escuridao from "../assets/escuridao.png";
+import { FiPlusCircle } from "react-icons/fi";
 
 
 const books = [
@@ -16,8 +18,8 @@ const books = [
     title: "Duna",
     author: "Frank Herbert",
     image: dunaImage,
-    description: "Uma das maiores obras de ficção científica já escritas.",
-    status: "Concluído" as "Concluído", 
+    description: "No deserto do planeta Arrakis, intrigas políticas e batalhas épicas se desenrolam em busca do controle da especiaria.",
+    status: "Concluído" as "Concluído",
   },
   {
     id: "2",
@@ -25,7 +27,7 @@ const books = [
     author: "Isaac Asimov",
     image: fundacao,
     description: "A saga galáctica de Asimov.",
-    status: "Não lido" as "Não lido", 
+    status: "Não lido" as "Não lido",
   },
   {
     id: "3",
@@ -33,7 +35,7 @@ const books = [
     author: "William Gibson",
     image: neuromancer,
     description: "Cyberpunk puro.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
   {
     id: "4",
@@ -41,7 +43,7 @@ const books = [
     author: "Isaac Asimov",
     image: robo,
     description: "Coleção de contos sobre robôs.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
   {
     id: "5",
@@ -49,7 +51,7 @@ const books = [
     author: "Aldous Huxley",
     image: admiravel,
     description: "Uma sociedade futurista moldada por engenharia genética e condicionamento psicológico.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
   {
     id: "6",
@@ -57,7 +59,7 @@ const books = [
     author: "Arthur C. Clarke",
     image: infancia,
     description: "A chegada de alienígenas benevolentes transforma a civilização humana para sempre.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
   {
     id: "7",
@@ -65,7 +67,7 @@ const books = [
     author: "Stanisław Lem",
     image: solaris,
     description: "Cientistas tentam compreender o misterioso oceano pensante do planeta Solaris.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
   {
     id: "8",
@@ -73,7 +75,7 @@ const books = [
     author: "Ursula K. Le Guin",
     image: escuridao,
     description: "Explora temas de gênero e cultura em um planeta onde os habitantes não possuem sexo fixo.",
-    status: "Em progresso" as "Em progresso",  
+    status: "Em progresso" as "Em progresso",
   },
 ];
 
@@ -84,13 +86,68 @@ const BookDetails: React.FC = () => {
   if (!book) return <div>Livro não encontrado</div>;
 
   return (
-    <div className="book-details">
-      <img src={book.image} alt={book.title} width={300} height={300} />
-      <h2>{book.title}</h2>
-      <p><strong>Autor:</strong> {book.author}</p>
-      <p><strong>Descrição:</strong> {book.description}</p>
-      <p><strong>Status:</strong> {book.status}</p>
-    </div>
+    <Layout>
+      <div style={{ padding: "20px", fontFamily: "Arial, Helvetica, sans-serif" }}>
+        
+        <div style={{ fontSize: "14px", marginBottom: "12px", color: "#555" }}>
+          <Link to="/search" style={{ color: "#555", textDecoration: "none" }}>Search</Link>
+          {" "}›{" "}
+          <span style={{ color: "black", fontWeight: 500 }}>{book.title}</span>
+        </div>
+
+        <div style={{ display: "flex", gap: "24px", marginTop: "24px" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <img
+              src={book.image}
+              alt={book.title}
+              className="book-image"
+              style={{
+                width: "380px",
+                height: "auto",
+                borderRadius: "12px",
+                marginBottom: "12px"
+              }}
+            />
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                color: "#0e7490",
+                cursor: "pointer",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                fontWeight: 500,
+                backgroundColor: "#e0f2f1",
+                padding: "8px 12px",
+                borderRadius: "8px",
+                transition: "background-color 0.3s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#b2dfdb";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#e0f2f1";
+              }}
+            >
+              {/* <FiPlusCircle size={18} /> */}
+              <span>Adicionar shelf</span>
+            </div>
+          </div>
+
+          <div className="book-info" style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "8px" }}>
+            <p className="book-author" style={{ textTransform: "uppercase", color: "#0e7490", fontWeight: 500, fontSize: "14px" }}>
+              {book.author}
+            </p>
+            <h1 className="book-title" style={{ fontSize: "32px", margin: 0 }}>
+              {book.title}
+            </h1>
+            <p className="book-status" style={{ fontSize: "16px", color: "#555", maxWidth: "600px", lineHeight: 1.5 }}>
+              {book.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

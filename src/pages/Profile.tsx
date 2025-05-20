@@ -3,7 +3,9 @@ import Layout from "../components/Layout";
 
 const Profile: React.FC = () => (
   <Layout>
-    <h2>Profile Page</h2>
+    <div className="search-page-header">
+        <h1 className="search-title">My profile</h1>
+      </div>
   </Layout>
 );
 
