@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Layout from "../components/Layout";
 import dunaImage from "../assets/duna.png";
 import neuromancer from "../assets/neuromancer.png";
@@ -112,11 +112,6 @@ const BookDetails: React.FC = () => {
   return (
     <Layout>
       <div style={{ padding: "20px", fontFamily: "Arial, Helvetica, sans-serif" }}>
-        <div style={{ fontSize: "14px", marginBottom: "12px", color: "#555" }}>
-          <Link to="/search" style={{ color: "#555", textDecoration: "none" }}>Search</Link>
-          {" "}›{" "}
-          <span style={{ color: "black", fontWeight: 500 }}>{book.title}</span>
-        </div>
 
         <div style={{ display: "flex", gap: "24px", marginTop: "24px" }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
