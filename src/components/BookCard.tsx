@@ -6,7 +6,7 @@ interface BookCardProps {
   image: string;
   title: string;
   status: "Concluído" | "Não lido" | "Em progresso";
-  onRemove?: (id: string) => void; 
+  onRemove?: (id: string) => void;
 }
 
 const BookCard: React.FC<BookCardProps> = ({
@@ -33,7 +33,7 @@ const BookCard: React.FC<BookCardProps> = ({
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f0f0f0")}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
     >
-       {onRemove && (
+      {onRemove && (
         <div
           onClick={() => onRemove(id)}
           style={{
@@ -54,7 +54,11 @@ const BookCard: React.FC<BookCardProps> = ({
           <span style={{ color: "#ff3333", fontWeight: "bold", fontSize: "16px", lineHeight: "1" }}>×</span>
         </div>
       )}
-      <Link to={`/book/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
+      <Link
+        to={`/book/${id}`}
+        state={{ from: "shelf" }}
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
         <img
           src={image}
           alt={title}
