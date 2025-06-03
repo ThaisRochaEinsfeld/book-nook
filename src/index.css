@@ -144,3 +144,33 @@ nav a:hover {
   font-size: 20px;
   color: #bbb;
 }
+.book-card {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  padding: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.book-card:hover {
+  background-color: #f0f0f0; /* cinza clarinho no hover */
+}
+
+.book-card-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.book-card-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.book-card-status {
+  font-size: 14px;
+  color: #666;
+}
