@@ -174,3 +174,14 @@ nav a:hover {
   font-size: 14px;
   color: #666;
 }
+
+.profile-text {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+  color: rgb(121, 126, 126);
+}
+
+
+.profile-text-blue {
+  color: rgb(14, 149, 166);
+}
